@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package modelo;
+
+import java.util.ArrayList;
+
+
+public class Banco {
+    
+    private String nit;
+    private String nombre;
+    private ArrayList<Cuenta> lstCuentas;
+
+    public Banco() {
+        this.nit = "123456789-01";
+        this.nombre = "Banco U Caldas";
+        this.lstCuentas = new ArrayList<>();
+    }
+
+    public Banco(String nit, String nombre) {
+        this.nit = nit;
+        this.nombre = nombre;
+        this.lstCuentas = new ArrayList<>();
+    }
+
+    public String getNit() {
+        return nit;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Cuenta> getLstCuentas() {
+        return lstCuentas;
+    }
+
+    public void setLstCuentas(ArrayList<Cuenta> lstCuentas) {
+        this.lstCuentas = lstCuentas;
+    }
+
+
+    
+    
+
+
+}
