@@ -5,6 +5,7 @@
 package vista;
 
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -104,6 +105,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         cbxTipoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Persona Natural", "Persona Juridica" }));
 
         btnCrearCliente.setText("Crear");
+        btnCrearCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearClienteActionPerformed(evt);
+            }
+        });
 
         btnBuscarCliente.setText("Buscar");
 
@@ -307,6 +313,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreClienteActionPerformed
 
+    private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearClienteActionPerformed
+        // TODO add your handling code here:
+        crearCliente();
+    }//GEN-LAST:event_btnCrearClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -388,6 +399,22 @@ public class frmPrincipal extends javax.swing.JFrame {
         //Año de nacimiento
         for (int i = LocalDate.now().getYear(); i >= 1; i--) {
             cbxAnoNacimientoCliente.addItem(i + "");
+            
+        }
+    }
+
+    private void crearCliente() {
+        
+        
+        if (txtDocumentoCliente.equals("")) {
+            JOptionPane.showMessageDialog(this, "El documento es obligatorio");
+        }else if (txtNombreCliente.equals("")) {
+            JOptionPane.showMessageDialog(this, "El nombre es obligatorio");
+        }else if (txtCorreoCliente.equals("")) {
+            JOptionPane.showMessageDialog(this, "El correo es obligatorio");
+        }else if (txtTelefonoCliente.equals("")) {
+            JOptionPane.showMessageDialog(this, "El telefono es obligatorio");    
+        
             
         }
     }
